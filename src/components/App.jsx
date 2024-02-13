@@ -1,7 +1,7 @@
 import React from "react";
 import { lazy } from 'react';
 import { Route, Routes } from "react-router-dom";
-import { PageNames } from "router/paths";
+// import { PageNames } from "router/paths";
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 import { ErrorPage } from "pages/ErrorPage/ErrorPage";
 
@@ -19,12 +19,12 @@ function App () {
     
     <Routes>
 
-    <Route path='homepage' element={<SharedLayout/>}>
+    <Route path="/" element={<SharedLayout/>}>
     <Route index element={<Home/>}/>
-    <Route path='movies' element={<Movies/>}/>
-    <Route path='moviesDetails' element={<MovieDetails/>}>
-    <Route path='cast' element={<Cast/>}/>
-    <Route path='reviews' element={<Reviews/>}/>
+    <Route path="movies" element={<Movies/>}/>
+    <Route path="movies/:movieId" element={<MovieDetails/>}>
+    <Route path="cast" element={<Cast/>}/>
+    <Route path="reviews" element={<Reviews/>}/>
     </Route>
     <Route path='*' element={<ErrorPage/>}/>
     </Route>
