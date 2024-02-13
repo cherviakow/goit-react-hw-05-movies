@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import { Container, List, Title } from '../MovieList/MovieList.styled';
 import noPoster from '../../image/No_image_poster.png'
 
-const MovieList = ({movies}) => {
+export const MovieList = ({movies}) => {
     const location = useLocation();
 
     return (

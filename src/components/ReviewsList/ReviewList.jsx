@@ -1,7 +1,7 @@
 import React from 'react'
-import { List, Item, Name, Review } from '../ReviewsList/ReviewsList.styled';
+import { List, Item, Name, Review } from '../ReviewsList/ReviewList.styled';
 
-const ReviewList = ({reviews}) => {
+export const ReviewList = ({reviews}) => {
     if(!reviews || !reviews.length){
         return <p>No information about reviews is avaliable</p>
     }
@@ -19,4 +19,4 @@ const ReviewList = ({reviews}) => {
   )
 }
 
-export default ReviewList
+// export default ReviewList;

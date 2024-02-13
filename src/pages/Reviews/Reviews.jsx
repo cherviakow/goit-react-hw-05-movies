@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getMovieReviews } from '../../API/API';
-import { ReviewsList } from '../../components/ReviewsList/ReviewsList';
+import { getMoviesReviews } from '../../API/API';
+import { ReviewList } from '../../components/ReviewsList/ReviewList';
 import { Loader } from '../../Loader/Loader';
 
 const Reviews = () => {
@@ -14,7 +14,7 @@ const Reviews = () => {
     const fetchMovieReviews = async () => {
       try {
         setOnLoad(true);
-        const data = await getMovieReviews(movieId);
+        const data = await getMoviesReviews(movieId);
         setMovieReviews(data);
         setOnLoad(false);
       } catch (error) {
@@ -29,7 +29,7 @@ const Reviews = () => {
   return (
     <>
       {onLoad && <Loader />}
-      {movieReviews && <ReviewsList reviews={movieReviews} />}
+      {movieReviews && <ReviewList reviews={movieReviews} />}
       {error && <p>Something went wrong. Please, try again</p>}
     </>
   );

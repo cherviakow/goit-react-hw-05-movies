@@ -7,32 +7,26 @@ import { ErrorPage } from "pages/ErrorPage/ErrorPage";
 
 
 
-const Homepage = lazy(() => import('../pages/Homepage/Homepage'));
+const Home = lazy(() => import('../pages/Homepage/Homepage'));
 const Movies = lazy(() => import('../pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../pages/Cast/Cast'));
-const Reviews = lazy(() => import('../pages/MovieReviews/MovieReviews'))
-
-// import Homepage from "pages/Homepage/Homepage";
-// import Movies from "pages/Movies/Movies";
-// import MovieDetails from "pages/MovieDetails/MovieDetails";
-// import MovieReviews from "pages/MovieReviews/MovieReviews";
-
-
+const Reviews = lazy(() => import('../pages/Reviews/Reviews'))
 
 
 function App () {
   return (
+    
     <Routes>
 
-    <Route path={PageNames.homepage} element={<SharedLayout/>}/>
-    <Route index element={<Homepage/>}/>
-    <Route path={PageNames.movies} element={<Movies/>}/>
-    <Route path={PageNames.moviesDetails} element={<MovieDetails/>}/>
-    <Route path={PageNames.cast} element={<Cast/>}/>
-    <Route path={PageNames.reviews} element={<Reviews/>}/>
-    
-    <Route path='*' element={<ErrorPage/>}>
+    <Route path='homepage' element={<SharedLayout/>}>
+    <Route index element={<Home/>}/>
+    <Route path='movies' element={<Movies/>}/>
+    <Route path='moviesDetails' element={<MovieDetails/>}>
+    <Route path='cast' element={<Cast/>}/>
+    <Route path='reviews' element={<Reviews/>}/>
+    </Route>
+    <Route path='*' element={<ErrorPage/>}/>
     </Route>
     
     </Routes>
