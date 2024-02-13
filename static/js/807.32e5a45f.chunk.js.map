@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/807.32e5a45f.chunk.js","mappings":"iKAQA,UANqB,WACnB,OACEA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,gBAET,C","sources":["pages/MovieReviews/MovieReviews.jsx"],"sourcesContent":["import React from 'react'\n\nconst MovieReviews = () => {\n  return (\n    <div>MovieReviews</div>\n  )\n}\n\nexport default MovieReviews"],"names":["_jsx","children"],"sourceRoot":""}
